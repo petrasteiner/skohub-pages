@@ -3,6 +3,7 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+
 colour: a skos:ConceptScheme ;
     dct:title "Color Vocabulary"@en, "Farbvokab"@de ;
     dct:creator "Petra"@de ;
@@ -18,3 +19,26 @@ colour:violet a skos:Concept ;
 colour:blue a skos:Concept ;
     skos:prefLabel "Blau"@de, "blue"@en ;
     skos:topConceptOf colour: .
+
+ 
+
+w3i:
+    a skos:ConceptScheme;
+    dct:description "My wonderful vocabulary."@en;
+    dct:title "Test"@en;
+    skos:hasTopConcept w3i:Vehicle.
+w3i:bicycle
+    a skos:Concept;
+    skos:broader w3i:Vehicle;
+    skos:inScheme w3i:;
+    skos:prefLabel "Fahrrad"@de, "bicycle"@en.
+w3i:car
+    a skos:Concept;
+    skos:broader w3i:Vehicle;
+    skos:inScheme w3i:;
+    skos:prefLabel "car"@en.
+w3i:Vehicle
+    a skos:Concept;
+    skos:narrower w3i:bicycle, w3i:car;
+    skos:prefLabel "vehicle"@en;
+    skos:topConceptOf w3i: .
